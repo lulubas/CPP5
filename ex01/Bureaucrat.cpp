@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 16:01:43 by lbastien          #+#    #+#             */
-/*   Updated: 2024/09/05 17:58:06 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/09/06 16:24:16 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
     return *this;
 }
 
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat &other) {
+    stream << other.getName() << ", bureaucrat grade " << other.getGrade();
+    return stream;
+}
+
 Bureaucrat::~Bureaucrat(){
     std::cout << "Bureaucrat destructor called" << std::endl;
 }
@@ -59,9 +64,16 @@ void Bureaucrat::decrementGrade(void) {
     _grade++;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Bureaucrat &other) {
-    stream << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
-    return stream;
+void Bureaucrat::signForm(Form& form) {
+    try
+    {
+        form.beSigned(*this);
+        std::cout << getName() << " signed the form " << form.getName() << " successfully" << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << getName() << " could not sign the form " << form.getName() << ": " << e.what() << std::endl;        
+    }
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
