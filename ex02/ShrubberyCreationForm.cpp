@@ -12,7 +12,7 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("Random target") {
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("random_target") {
     std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 

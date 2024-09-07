@@ -6,7 +6,7 @@
 #    By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 17:07:24 by lbastien          #+#    #+#              #
-#    Updated: 2024/09/06 17:47:19 by lbastien         ###   ########.fr        #
+#    Updated: 2024/09/07 10:36:24 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 TARGET = bureaucrats
 
 # Source, Object, Dependency files
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ = $(SRC:.cpp=.o)
 DEP = $(OBJ:.o=.d)
 
@@ -45,6 +45,7 @@ clean:
 #Also clean up the target executable (ignore error if file does not exist)
 fclean: clean
 	-rm -f $(TARGET)
+	-rm -f *_shrubbery
 
 #Clean up and recompile
 re: fclean all
