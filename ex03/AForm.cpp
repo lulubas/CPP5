@@ -6,7 +6,7 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 14:50:40 by lbastien          #+#    #+#             */
-/*   Updated: 2024/09/06 17:21:32 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/09/09 08:58:32 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ bool AForm::canExecute(Bureaucrat& bc) {
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-    return("Grade of bureaucrat too low to sign!");
+    return("Grade of bureaucrat too low!");
 };
 
 const char* AForm::DocumentNotSigned::what() const throw() {
